@@ -1,0 +1,79 @@
+.sidebar {
+  width: 280px;
+  height: 100%;
+  background-color: #3f0e40;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #49274b;
+}
+
+.sidebar_title {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.sidebar_add-channel {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+.sidebar_add-channel:hover {
+  text-decoration: underline;
+}
+
+.sidebar_search {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  border-bottom: 1px solid #49274b;
+}
+
+.sidebar_search input[type="text"] {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  padding: 5px;
+  width: 100%;
+}
+
+.sidebar_channels {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.sidebar_channels ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar_channels li {
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.sidebar_channels li:hover {
+  background-color: #49274b;
+}
+
+.sidebar_channels li.active {
+  background-color: #49274b;
+}
+
+.sidebar_channels ul li a {
+  color: white;
+  text-decoration: none;
+}

@@ -1,0 +1,22 @@
+<div class="sidebar">
+  <div class="sidebar_header">
+    <h3 class="sidebar_title">Channels</h3>
+    <a class="sidebar_add-channel" href="#">+</a>
+  </div>
+  <div class="sidebar_search">
+    <input type="text" placeholder="Search channels" />
+  </div>
+  <div class="sidebar_channels">
+    <ul>
+      <li *ngFor="let channel of channels" [class.active]="channel === selectedChannel">
+        <a href="#" (click)="selectedChannel = channel">{{ channel }}</a>
+      </li>
+    </ul>
+    <hr>
+    <ul>
+      <li *ngFor="let user of directMessages" [class.active]="user === selectedDirectMessage">
+        <a href="#" (click)="selectedDirectMessage = user">{{ user }}</a>
+      </li>
+    </ul>
+  </div>
+</div>
