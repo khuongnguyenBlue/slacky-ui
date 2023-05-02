@@ -1,0 +1,29 @@
+.sidebar_channels {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.sidebar_channels ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar_channels li {
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.sidebar_channels li:hover {
+  background-color: #49274b;
+}
+
+.sidebar_channels li.active {
+  background-color: #49274b;
+}
+
+.sidebar_channels ul li a {
+  color: white;
+  text-decoration: none;
+}

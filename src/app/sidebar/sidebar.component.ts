@@ -6,19 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./sidebar.component.css'],
 })
 export class SidebarComponent {
-  channels: string[] = [
-    'General',
-    'Random',
-    'Marketing',
-    'Design',
-    'Development',
-  ];
-  directMessages: string[] = [
-    'John Doe',
-    'Jane Smith',
-    'Alex Johnson',
-    'Sarah Lee',
-  ];
-  selectedChannel: string = 'General';
-  selectedDirectMessage: string = '';
+  showCreateChannel: boolean = false;
 }

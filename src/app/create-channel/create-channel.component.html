@@ -1,0 +1,22 @@
+<form [formGroup]="channelForm" (ngSubmit)="onSubmit()">
+  <div class="text-input">
+    <label for="name">Channel name:</label>
+    <div>
+      <input type="text" id="name" formControlName="name">
+    </div>
+  </div>
+  <div>
+    <label>Channel type:</label>
+    <div class="radio-group">
+      <div>
+        <input type="radio" id="public" name="type" value="public" formControlName="type" value="PUBLIC">
+        <label for="public">Public</label>
+      </div>
+      <div>
+        <input type="radio" id="private" name="type" value="private" formControlName="type" value="PRIVATE">
+        <label for="private">Private</label>
+      </div>
+    </div>
+  </div>
+  <button type="submit">Create</button>
+</form>
