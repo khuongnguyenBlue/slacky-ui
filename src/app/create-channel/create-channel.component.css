@@ -1,0 +1,38 @@
+form {
+  margin: 8px;
+}
+
+button[type="submit"] {
+  background-color: #4CAF50;
+  /* Green background */
+  border: none;
+  /* Remove borders */
+  color: white;
+  /* White text */
+  padding: 12px 24px;
+  /* Some padding */
+  text-align: center;
+  /* Center text */
+  text-decoration: none;
+  /* Remove underline */
+  display: inline-block;
+  /* Make it a block element */
+  font-size: 16px;
+  /* Set font size */
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* Set font family */
+  cursor: pointer;
+  /* Add cursor on hover */
+  border-radius: 4px;
+  /* Add rounded corners */
+  margin-top: 12px;
+}
+
+button[type="submit"]:hover {
+  background-color: #3e8e41;
+  /* Darker green background on hover */
+}
+
+.text-input input {
+  margin: 1em 0.5em;
+}

@@ -1,0 +1,13 @@
+<div class="sidebar_channels">
+  <ul>
+    <li *ngFor="let channel of channels" [class.active]="channel.id === selectedId">
+      <a href="#" (click)="selectedId = channel.id">{{ channel.name }}</a>
+    </li>
+  </ul>
+  <hr>
+  <!-- <ul>
+    <li *ngFor="let user of directMessages" [class.active]="user === selectedDirectMessage">
+      <a href="#" (click)="selectedDirectMessage = user">{{ user }}</a>
+    </li>
+  </ul> -->
+</div>
