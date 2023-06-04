@@ -31,7 +31,8 @@ export class CreateChannelComponent {
           this.channelService.updateChannelsList(channel);
         },
         error: (error) => {
-          console.log(error.message);
+          console.log(error.error.message);
+          alert('Error creating channel.');
         },
       });
   }

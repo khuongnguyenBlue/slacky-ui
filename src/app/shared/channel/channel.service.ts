@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Channel } from '../channel/channel.interface';
 import { CreateChannelDto } from './channel.dto';
+import { AuthService } from '../auth/auth.service';
 
 @Injectable({
   providedIn: 'root',
@@ -12,29 +13,51 @@ export class ChannelService {
   private channelsSubject = new BehaviorSubject<any[]>([]);
   channels$ = this.channelsSubject.asObservable();
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private authService: AuthService) {
     this.fetchChannels();
   }
 
   fetchChannels() {
-    this.http.get<Channel[]>(this.apiUrl).subscribe({
+    const options = {
+      headers: this.defaultHeaders(),
+    };
+
+    this.http.get<Channel[]>(this.apiUrl, options).subscribe({
       next: (channels) => {
         this.channelsSubject.next(channels as any[]);
       },
       error: (error) => {
-        console.log(error);
+        console.log(error.error.message);
         alert(`Cannot fetch channels\n${error}`);
       },
     });
   }
 
   createChannel(body: CreateChannelDto): Observable<Channel> {
-    return this.http.post<Channel>(this.apiUrl, body);
+    const options = {
+      headers: this.defaultHeaders(),
+    };
+
+    return this.http.post<Channel>(this.apiUrl, body, options);
   }
 
   updateChannelsList(newChannelData: any) {
     const currentChannels = this.channelsSubject.value;
     const updatedChannels = [...currentChannels, newChannelData];
     this.channelsSubject.next(updatedChannels);
+  }
+
+  private defaultHeaders() {
+    const token = this.authService.getToken();
+    if (!token) {
+      alert('Cannot get token');
+      return;
+    }
+
+    const headers = {
+      Authorization: `Bearer ${token}`,
+    };
+
+    return headers;
   }
 }

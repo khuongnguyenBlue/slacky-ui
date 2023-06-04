@@ -1,38 +1,40 @@
 form {
-  margin: 8px;
+  margin: 16px;
 }
 
-button[type="submit"] {
-  background-color: #4CAF50;
-  /* Green background */
+button {
+  background-color: #fff;
+  color: #3f0e40;
   border: none;
-  /* Remove borders */
-  color: white;
-  /* White text */
-  padding: 12px 24px;
-  /* Some padding */
-  text-align: center;
-  /* Center text */
-  text-decoration: none;
-  /* Remove underline */
-  display: inline-block;
-  /* Make it a block element */
-  font-size: 16px;
-  /* Set font size */
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  /* Set font family */
+  padding: 8px 16px;
+    border-radius: 4px;
   cursor: pointer;
-  /* Add cursor on hover */
-  border-radius: 4px;
-  /* Add rounded corners */
-  margin-top: 12px;
+  margin: 8px auto;
 }
 
-button[type="submit"]:hover {
-  background-color: #3e8e41;
-  /* Darker green background on hover */
+.text-input {
+  margin-bottom: 1em;
+}
+
+label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #ccc;
+  margin-bottom: 4px;
 }
 
 .text-input input {
-  margin: 1em 0.5em;
+  width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+    margin: 8px auto;
+  }
+  
+  .text-input input:focus {
+    outline: none;
+    border-color: #3f0e40;
 }
