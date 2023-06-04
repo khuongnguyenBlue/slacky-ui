@@ -9,8 +9,9 @@ import { ChannelComponent } from './channel/channel.component';
 import { ChannelListComponent } from './channel-list/channel-list.component';
 import { CreateChannelComponent } from './create-channel/create-channel.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
-
+import { LoginComponent } from './login/login.component';
+import { WorkspaceComponent } from './workspace/workspace.component';
+import { AppRoutingModule } from './shared/app-routing.modules';
 
 @NgModule({
   declarations: [
@@ -20,8 +21,15 @@ import { ReactiveFormsModule } from '@angular/forms';
     ChannelComponent,
     ChannelListComponent,
     CreateChannelComponent,
+    LoginComponent,
+    WorkspaceComponent,
   ],
-  imports: [BrowserModule, HttpClientModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
